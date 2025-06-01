@@ -1,11 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  background: url("../images/bg2.jpg");
+  background: url("../images/bg2.jpg") no-repeat center center;
   background-size: cover;
-  background-repeat: no-repeat;
   color: black;
   margin: 0;
+  padding: 0;
 }
+
 header,
 footer {
   background-color: #e9c46a;
@@ -13,12 +23,14 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
 header h1 {
@@ -50,7 +62,8 @@ header nav a:hover {
   margin: 40px auto;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   font-family: "Poppins", sans-serif;
-  opacity: 0.75;
+  opacity: 0.9;
+  width: 90%;
 }
 
 .order-container form {
@@ -58,6 +71,7 @@ header nav a:hover {
   flex-direction: column;
   gap: 15px;
 }
+
 .order-container h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -66,6 +80,7 @@ header nav a:hover {
   font-weight: bolder;
   font-family: "Poppins", sans-serif;
 }
+
 .order-container label {
   display: flex;
   flex-direction: column;
@@ -91,7 +106,6 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 input[type="number"] {
   -webkit-appearance: none;
   -moz-appearance: textfield;
@@ -119,16 +133,17 @@ input[type="number"] {
   text-align: center;
   font-family: "Poppins", sans-serif;
 }
+
 table {
-  width: 95%;
-  border-collapse: collapse;
+  width: 95%; /* بدال 95% */
   margin-top: 1rem;
   background-color: rgba(255, 255, 255);
   border-radius: 14px;
-  opacity: 0.75;
+  opacity: 0.9;
   padding: 15px;
   text-align: center;
   margin: 1rem auto;
+  overflow-x: auto;
 }
 
 th,
@@ -136,13 +151,14 @@ td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
-  height: 140px;
   color: black;
+  vertical-align: middle;
+  font-size: 14px;
 }
 
 img {
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -159,18 +175,19 @@ img {
 .deleteBtn {
   background-color: #ba181b;
   color: white;
-  width: 50%;
+  width: 80%;
   height: 35px;
   border-radius: 15px;
   transition: background-color 0.3s;
 }
+
 .deleteBtn:hover {
   cursor: pointer;
   background-color: #a4161a;
 }
 
 .ClearOrdersBtn {
-  width: 30%;
+  width: 80%;
   height: 50px;
   background-color: #ba181b;
   color: #fff;
@@ -181,18 +198,19 @@ img {
   font-size: 16px;
   transition: background-color 0.3s;
 }
+
 .ClearOrdersBtn:hover {
   background-color: #a4161a;
   cursor: pointer;
 }
 
-/* menu style  */
+/* menu style */
 .cards-container {
   font-family: "Poppins", sans-serif;
   background-color: #e9c46a;
   display: flex;
-  flex-wrap: wrap; /* يخليهم ينزلوا للسطر الثاني إذا ما في مساحة */
-  gap: 20px; /* مسافة بين الكروت */
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
   padding: 20px;
 }
@@ -217,6 +235,7 @@ img {
 .menu-card:hover {
   transform: scale(1.03);
 }
+
 .menu-card .description {
   font-size: 14px;
   color: #000000;
@@ -224,9 +243,67 @@ img {
   font-style: italic;
 }
 
+/* 🎯 Media Queries */
 @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  header nav a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  footer {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .order-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 13px;
+    width: 95%;
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ClearOrdersBtn {
+    width: 50%;
+  }
+
   .cards-container {
     display: grid;
     grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .menu-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .deleteBtn {
+    width: 90%;
+    font-size: 12px;
+    padding: 6px 10px;
+    text-align: center;
   }
 }
