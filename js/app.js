@@ -44,7 +44,7 @@ function renderOrders() {
     <td><img src="${order.mealImage}" alt="${
       order.mealName
     }" width="60" height="60"/></td>
-    <td><button class="deleteBtn" data-index="${index}">❌ Delete</button></td>
+    <td><button class="deleteBtn" data-index="${index}"> Delete</button></td>
   `;
 
     ordersContainer.appendChild(row);
